@@ -21,6 +21,8 @@ export default function UploadCard({ onSubmit, isLoading }: UploadCardProps) {
     formState: { errors },
   } = useForm<FormValues>({ defaultValues: { message: '' } });
 
+  const { ref: registerRef, ...messageField } = register("message");
+
   const [files, setFiles] = useState<File[]>([]);
   const [dragActive, setDragActive] = useState(false);
   const textareaRef = useRef<HTMLTextAreaElement | null>(null);
@@ -99,11 +101,15 @@ export default function UploadCard({ onSubmit, isLoading }: UploadCardProps) {
         >
           <textarea
             id="message"
-            ref={textareaRef}
+            // ref={textareaRef}
             rows={4}
+            ref = {(element) => {
+              textareaRef.current = element;
+              registerRef(element);
+            }}
             className="min-h-[10rem] w-full resize-none rounded-[1.75rem] border-0 bg-white px-5 py-5 text-base leading-7 text-slate-900 outline-none transition focus:ring-2 focus:ring-purple-200"
             placeholder="Drop your message... Type a note, paste text, or attach files."
-            {...register('message')}
+            {...messageField}
           />
         </div>
 

@@ -90,7 +90,7 @@ function HomePage() {
 
             <div className="mt-6">
               {!shareKey ? (
-                <UploadCard onSubmit={handleUpload} isLoading={uploadMutation.isLoading} />
+                <UploadCard onSubmit={handleUpload} isLoading={uploadMutation.isPending} />
               ) : (
                 <ShareKeyCard
                   shareKey={shareKey}
@@ -115,8 +115,8 @@ function HomePage() {
             </div>
 
             <div className="space-y-6">
-              <RetrieveCard onRetrieve={handleRetrieve} isLoading={retrieveMutation.isLoading} />
-              {retrieveMutation.isLoading ? (
+              <RetrieveCard onRetrieve={handleRetrieve} isLoading={retrieveMutation.isPending} />
+              {retrieveMutation.isPending ? (
                 <div className="rounded-[2rem] border border-slate-200 bg-slate-50 p-6">
                   <div className="space-y-3">
                     <div className="h-6 w-3/4 animate-pulse rounded-full bg-slate-200" />
