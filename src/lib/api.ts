@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_HOST = 'http://43.204.234.146:8080';
+const API_HOST = '';
 
 export interface UploadResponse {
   objectId?: string;
