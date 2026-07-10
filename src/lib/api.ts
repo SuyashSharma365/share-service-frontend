@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_HOST = '';
+const API_HOST = 'https://dropcode.space';
 
 export interface UploadResponse {
   objectId?: string;

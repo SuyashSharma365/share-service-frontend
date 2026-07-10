@@ -1,5 +1,4 @@
 import { Link, NavLink } from 'react-router-dom';
-import CookieBanner from './CookieBanner';
 
 type LayoutProps = {
   children: React.ReactNode;
@@ -35,7 +34,6 @@ function Layout({ children }: LayoutProps) {
         </nav>
       </header>
 
-      <CookieBanner />
       <main>{children}</main>
 
       <footer className="site-footer">

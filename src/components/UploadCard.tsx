@@ -95,22 +95,22 @@ export default function UploadCard({ onSubmit, isLoading }: UploadCardProps) {
 
   return (
     <motion.div
-      className="rounded-[2.25rem] border border-slate-200/80 bg-white/95 p-5 shadow-[0_16px_48px_rgba(15,23,42,0.06)]"
+      className="rounded-[1.25rem] border border-[#27272A] bg-[#111111] p-5 shadow-[0_12px_30px_rgba(2,6,23,0.6)] transition-transform duration-200 hover:-translate-y-1"
       whileHover={{ y: -2 }}
       transition={{ duration: 0.2 }}
     >
       <div className="mb-4">
         <div>
-          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-purple-700">Drop</p>
-          <h2 className="mt-3 text-2xl font-semibold text-slate-950">Drop files, text, or both</h2>
-          <p className="mt-2 text-sm text-slate-600">Type a note, paste text, or attach files.</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#7C3AED]">Drop</p>
+          <h2 className="mt-3 text-2xl font-semibold text-white">Drop files, text, or both</h2>
+          <p className="mt-2 text-sm text-slate-400">Type a note, paste text, or attach files.</p>
         </div>
       </div>
 
       <form onSubmit={handleSubmit(submitForm)} className="space-y-5">
         <div
-          className={`rounded-[1.75rem] border p-1 transition-all duration-200 ${
-            dragActive ? 'border-purple-400 bg-purple-50 shadow-[0_0_0_3px_rgba(139,92,246,0.12)]' : 'border-slate-200 bg-slate-50'
+          className={`rounded-[1.25rem] border p-1 transition-all duration-200 ${
+            dragActive ? 'border-[#7C3AED] bg-[#0f0710] shadow-[0_0_0_6px_rgba(124,58,237,0.08)]' : 'border-[#27272A] bg-[#0b0b0b]'
           }`}
           onDragEnter={() => setDragActive(true)}
           onDragOver={(event) => {
@@ -133,15 +133,15 @@ export default function UploadCard({ onSubmit, isLoading }: UploadCardProps) {
               // Also store for auto-height effect
               textareaRef.current = element;
             }}
-            className="min-h-[9rem] w-full resize-none rounded-[1.5rem] border-0 bg-white px-4 py-4 text-[15px] leading-7 text-slate-900 outline-none transition placeholder:text-slate-400 focus:ring-2 focus:ring-purple-200"
+            className="min-h-[9rem] w-full resize-none rounded-[1.5rem] border-0 bg-[#0b0b0b] px-4 py-4 text-[15px] leading-7 text-white outline-none transition placeholder:text-slate-500 focus:ring-2 focus:ring-[#7C3AED]/30"
             placeholder="Drop your message..."
           />
         </div>
 
         {selectedFiles.length > 0 && (
-          <div className="flex flex-wrap gap-2 rounded-[1.5rem] border border-slate-200 bg-slate-50 p-2.5">
+          <div className="flex flex-wrap gap-2 rounded-[1.25rem] border border-[#27272A] bg-[#0b0b0b] p-2.5">
             {selectedFiles.map((file, index) => (
-              <div key={`${file.name}-${index}`} className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1.5 text-sm text-slate-700 shadow-sm">
+              <div key={`${file.name}-${index}`} className="inline-flex items-center gap-2 rounded-full border border-[#27272A] bg-[#111111] px-3 py-1.5 text-sm text-slate-300 shadow-sm">
                 <span className="max-w-[11rem] truncate">{file.name}</span>
                 <button type="button" onClick={() => removeFile(index)} className="text-slate-400 transition hover:text-slate-700">
                   ×
@@ -151,7 +151,7 @@ export default function UploadCard({ onSubmit, isLoading }: UploadCardProps) {
           </div>
         )}
 
-        <div className="flex flex-col gap-3 rounded-[1.5rem] border border-slate-200 bg-white p-3 shadow-sm sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex flex-col gap-3 rounded-[1.25rem] border border-[#27272A] bg-[#111111] p-3 shadow-sm sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-3">
             <input
               id="upload-file"
@@ -167,7 +167,7 @@ export default function UploadCard({ onSubmit, isLoading }: UploadCardProps) {
             <button
               type="button"
               onClick={openFileDialog}
-              className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-3.5 py-2 text-sm font-medium text-slate-700 transition duration-200 hover:border-purple-300 hover:bg-purple-50 hover:text-slate-900 focus:outline-none focus:ring-2 focus:ring-purple-200"
+              className="inline-flex items-center gap-2 rounded-full border border-[#27272A] bg-[#0b0b0b] px-3.5 py-2 text-sm font-medium text-slate-300 transition duration-200 hover:border-[#7C3AED] hover:bg-[#0f0710] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#7C3AED]/30"
             >
               <Paperclip className="h-4 w-4" aria-hidden="true" />
               Attach file
@@ -179,8 +179,8 @@ export default function UploadCard({ onSubmit, isLoading }: UploadCardProps) {
             disabled={isLoading || !isSubmitEnabled}
             className={`inline-flex w-full items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold text-white transition-all duration-200 sm:w-auto ${
               isSubmitEnabled
-                ? 'bg-gradient-to-r from-purple-700 to-violet-600 shadow-[0_12px_32px_rgba(124,58,237,0.24)] hover:-translate-y-0.5 hover:from-purple-800 hover:to-violet-700 focus:outline-none focus:ring-2 focus:ring-purple-200 active:translate-y-0'
-                : 'bg-slate-300 text-slate-600 cursor-not-allowed'
+                ? 'bg-gradient-to-r from-[#7C3AED] to-[#6d28d9] shadow-[0_12px_32px_rgba(124,58,237,0.22)] hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-[#7C3AED]/30 active:translate-y-0'
+                : 'bg-slate-800 text-slate-500 cursor-not-allowed'
             }`}
           >
             <Send className="h-4 w-4" />

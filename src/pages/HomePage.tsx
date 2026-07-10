@@ -62,15 +62,15 @@ function HomePage() {
         path="/"
       />
 
-      <section className="grid gap-5 xl:grid-cols-2 xl:items-stretch">
-        <div className="rounded-[2.25rem] border border-slate-200/80 bg-white p-6 shadow-[0_20px_60px_rgba(15,23,42,0.06)] xl:h-full xl:p-7">
+      <section className="grid gap-6 xl:grid-cols-2 xl:items-stretch">
+        <div className="rounded-[1.25rem] border bg-[#111111] border-[#27272A] p-6 shadow-[0_20px_40px_rgba(2,6,23,0.7)] xl:h-full xl:p-7">
           <div className="flex h-full flex-col justify-between gap-5">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-purple-700">Drop Content</p>
-              <h1 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
+              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#7C3AED]">Drop Content</p>
+              <h1 className="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
                 Drop anything. Retrieve anywhere.
               </h1>
-              <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-600 sm:text-[15px]">
+              <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-400 sm:text-[15px]">
                 Share files or text securely using a simple 4-digit key. No login required.
               </p>
             </div>
@@ -89,14 +89,14 @@ function HomePage() {
           </div>
         </div>
 
-        <div className="rounded-[2.25rem] border border-slate-200/80 bg-white p-6 shadow-[0_20px_60px_rgba(15,23,42,0.06)] xl:h-full xl:p-7">
+        <div className="rounded-[1.25rem] border bg-[#111111] border-[#27272A] p-6 shadow-[0_20px_40px_rgba(2,6,23,0.7)] xl:h-full xl:p-7">
           <div className="flex h-full flex-col justify-between gap-5">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-purple-700">Retrieve Content</p>
-              <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
+              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#7C3AED]">Retrieve Content</p>
+              <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
                 Enter your 4-digit Drop Key
               </h2>
-              <p className="mt-3 max-w-3xl text-sm leading-7 text-slate-600 sm:text-[15px]">
+              <p className="mt-3 max-w-3xl text-sm leading-7 text-slate-400 sm:text-[15px]">
                 Quickly retrieve text, images, video, PDF, or downloads without leaving the screen.
               </p>
             </div>
@@ -104,7 +104,7 @@ function HomePage() {
             <div className="space-y-4">
               <RetrieveCard onRetrieve={handleRetrieve} isLoading={retrieveMutation.isPending} />
               {retrieveMutation.isPending ? (
-                <div className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-5">
+                <div className="rounded-[1.75rem] border border-[#27272A] bg-[#0b0b0b] p-5">
                   <div className="space-y-3">
                     <div className="h-6 w-3/4 animate-pulse rounded-full bg-slate-200" />
                     <div className="h-5 w-1/2 animate-pulse rounded-full bg-slate-200" />
@@ -114,16 +114,16 @@ function HomePage() {
               ) : retrievedContent ? (
                 <ContentPreview message={retrievedContent.message} data={retrievedContent.data} />
               ) : (
-                <div className="rounded-[1.75rem] border border-dashed border-slate-200 bg-slate-50 p-5 text-slate-600">
-                  <p className="text-sm">Enter a Drop Key to reveal text, image, video, PDF or download options.</p>
-                </div>
+                  <div className="rounded-[1.75rem] border border-dashed border-[#27272A] bg-[#0b0b0b] p-5 text-slate-400">
+                    <p className="text-sm">Enter a Drop Key to reveal text, image, video, PDF or download options.</p>
+                  </div>
               )}
             </div>
           </div>
         </div>
       </section>
 
-      <section className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <section className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {[
           {
             icon: Lock,
@@ -142,13 +142,13 @@ function HomePage() {
           },
         ].map((item) => {
           const IconComponent = item.icon;
-          return (
-            <div key={item.title} className="rounded-[1.75rem] border border-slate-200/80 bg-white p-5 shadow-[0_12px_40px_rgba(15,23,42,0.05)]">
+            return (
+            <div key={item.title} className="rounded-[1.25rem] border border-[#27272A] bg-[#111111] p-5 shadow-[0_10px_30px_rgba(2,6,23,0.6)]">
               <div className="flex items-start gap-3">
-                <IconComponent className="h-6 w-6 flex-shrink-0 text-purple-600" aria-hidden="true" />
+                <IconComponent className="h-6 w-6 flex-shrink-0 text-[#7C3AED]" aria-hidden="true" />
                 <div>
-                  <h3 className="text-base font-semibold text-slate-950">{item.title}</h3>
-                  <p className="mt-2 text-sm leading-6 text-slate-600">{item.description}</p>
+                  <h3 className="text-base font-semibold text-white">{item.title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-slate-400">{item.description}</p>
                 </div>
               </div>
             </div>

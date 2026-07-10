@@ -3,10 +3,10 @@
 @tailwind utilities;
 
 :root {
-  color-scheme: light;
+  color-scheme: dark;
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  background-color: #f8fafc;
-  color: #0f172a;
+  background-color: #09090B;
+  color: #ffffff;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -19,7 +19,7 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-  background: radial-gradient(circle at top, rgba(124, 58, 237, 0.14), transparent 30%), #f8fafc;
+  background: radial-gradient(circle at 20% 10%, rgba(124,58,237,0.04), transparent 30%), #09090B;
 }
 
 * {
@@ -64,6 +64,7 @@ main {
   gap: 0.7rem;
   font-weight: 700;
   font-size: 1.1rem;
+  color: #ffffff;
 }
 
 .brand-mark {
@@ -74,6 +75,7 @@ main {
   border-radius: 999px;
   background: #7c3aed;
   color: white;
+  box-shadow: 0 6px 20px rgba(124,58,237,0.18);
 }
 
 .nav-links {
@@ -85,7 +87,7 @@ main {
 }
 
 .nav-links a {
-  color: #475569;
+  color: #9ca3af;
   font-weight: 600;
 }
 
@@ -99,7 +101,8 @@ main {
   justify-content: space-between;
   gap: 2rem;
   padding: 2rem 0 3rem;
-  border-top: 1px solid #e2e8f0;
+  border-top: 1px solid rgba(39,39,42,0.5);
+  color: #9ca3af;
 }
 
 .footer-links {
@@ -124,7 +127,7 @@ main {
 
 .toast {
   border-radius: 1.5rem;
-  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.12);
+  box-shadow: 0 18px 50px rgba(2,6,23,0.6);
   padding: 1rem 1.25rem;
   min-width: 18rem;
   color: white;
@@ -146,7 +149,7 @@ main {
   position: sticky;
   top: 0;
   z-index: 40;
-  border-bottom: 1px solid rgba(148, 163, 184, 0.16);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.04);
 }
 
 @media (max-width: 900px) {

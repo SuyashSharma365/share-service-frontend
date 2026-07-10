@@ -19,29 +19,29 @@ export default function ShareKeyCard({ shareKey, onCopy, onReset }: ShareKeyCard
 
   return (
     <motion.section
-      className="rounded-[2.5rem] border border-purple-200 bg-purple-50/85 p-6 shadow-[0_18px_40px_rgba(124,58,237,0.12)]"
+      className="rounded-[1.75rem] border border-[#27272A] bg-[#111111] p-6 shadow-[0_16px_36px_rgba(2,6,23,0.6)]"
       initial={{ opacity: 0, y: 16 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.35 }}
     >
-      <p className="text-sm font-semibold uppercase tracking-[0.24em] text-purple-700">Success</p>
-      <h3 className="mt-3 text-xl font-semibold text-slate-950">Content Dropped Successfully</h3>
-      <div className="mt-4 rounded-[2rem] border border-purple-200 bg-white p-6 text-center shadow-sm">
-        <p className="text-sm uppercase tracking-[0.24em] text-slate-500">Share key</p>
-        <p className="mt-4 text-5xl font-bold tracking-[0.16em] text-slate-950">{shareKey}</p>
+      <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#7C3AED]">Success</p>
+      <h3 className="mt-3 text-xl font-semibold text-white">Content Dropped Successfully</h3>
+      <div className="mt-4 rounded-[1.25rem] border border-[#27272A] bg-[#0b0b0b] p-6 text-center shadow-sm">
+        <p className="text-sm uppercase tracking-[0.24em] text-slate-400">Share key</p>
+        <p className="mt-4 text-5xl font-bold tracking-[0.16em] text-white">{shareKey}</p>
       </div>
       <div className="mt-6 flex flex-col gap-4 sm:flex-row">
         <button
           type="button"
           onClick={handleCopy}
-          className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-purple-700 px-5 py-3 text-sm font-semibold text-white transition hover:bg-purple-800"
+          className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#7C3AED] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#6d28d9]"
         >
           <Copy className="h-4 w-4" /> {copied ? 'Copied ✓' : 'Copy'}
         </button>
         <button
           type="button"
           onClick={onReset}
-          className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-900 transition hover:border-slate-400"
+          className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-[#27272A] bg-[#0b0b0b] px-5 py-3 text-sm font-semibold text-slate-300 transition hover:border-slate-400"
         >
           <RotateCcw className="h-4 w-4" /> Drop Another
         </button>
