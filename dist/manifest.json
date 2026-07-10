@@ -1,0 +1,16 @@
+{
+  "name": "DropCode",
+  "short_name": "DropCode",
+  "description": "Anonymous file and text sharing with secure retrieval via a 4-digit key.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#7C3AED",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-import { ArrowUpRight, Download, FileText, ImageIcon} from 'lucide-react';
+import { ArrowUpRight, Download, FileText, ImageIcon } from 'lucide-react';
 import { downloadDataUrl } from '../lib/download';
 import { buildFilePreview } from '../lib/utils';
 
